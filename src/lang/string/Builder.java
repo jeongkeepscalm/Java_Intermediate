@@ -10,22 +10,15 @@ public class Builder {
      *    단, 루프 안 문자열을 더하는 코드는 최적화가 이루어지지 않으니 이 때 StringBuilder 를 사용하자.
      **/
 
+    // StringBuilder 에서 문자열을 변경하는 대부분의 메소드도 메소드체이닝 기법을 제공하기 위해 자기 자신을 반환한다.
     StringBuilder sb = new StringBuilder();
-    sb.append("a");
-    sb.append("b");
-    sb.append("c");
-    sb.append("d");
-    System.out.println(sb); // abcd
+    String str = sb.append("a").append("b").append("c").append("d")
+            .insert(4, "Java")
+            .delete(4, 8)
+            .reverse()
+            .toString();
 
-    System.out.println(sb.insert(4, "ffff")); // abcdffff
-
-    System.out.println(sb.delete(4, 8)); // abcd
-
-    System.out.println(sb.reverse()); // dcba
-
-    // StringBuilder(가변) -> String(불변)
-    String str = sb.toString();
-    System.out.println(str);
+    System.out.println(str); // dcba
 
     // 루프 안 StringBuilder 사용
     long startTime = System.currentTimeMillis();
