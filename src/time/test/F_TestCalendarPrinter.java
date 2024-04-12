@@ -4,9 +4,10 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class TestCalendarPrinter {
+public class F_TestCalendarPrinter {
 
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("년도를 입력하세요: ");
@@ -15,21 +16,27 @@ public class TestCalendarPrinter {
         System.out.print("월을 입력하세요: ");
         int month = scanner.nextInt();
 
-        printCalender(year, month);
+        printCalendar(year, month);
+
     }
 
-    private static void printCalender(int year, int month) {
+    private static void printCalendar(int year, int month) {
+
+        // 해당 월의 첫번째 요일을 구한다.
         LocalDate firstDayOfMonth = LocalDate.of(year, month, 1);
+
+        // 해당 월에 한 달을 더한 값.
         LocalDate firstDayOfNextMonth = firstDayOfMonth.plusMonths(1);
 
-        //월요일=1(1%7=1) ... 일요일7(7%7=0)
-        int offsetWeekDays = firstDayOfMonth.getDayOfWeek().getValue() % 7;
+        // 요일 출력
+        String[] days = new String[]{"Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"};
+        System.out.println(String.join(" ",days));
 
-        System.out.println("Su Mo Tu We Th Fr Sa ");
-        for (int i = 0; i < offsetWeekDays; i++) {
-            System.out.print("   ");
-        }
+        String blank = " ".repeat(3);
+        int firstDayValue = firstDayOfMonth.getDayOfWeek().getValue() % 7;
+        System.out.print(blank.repeat(firstDayValue));
 
+        // 다음달 1일 전까지 반복
         LocalDate dayIterator = firstDayOfMonth;
         while (dayIterator.isBefore(firstDayOfNextMonth)) {
             System.out.printf("%2d ", dayIterator.getDayOfMonth());
@@ -38,5 +45,7 @@ public class TestCalendarPrinter {
             }
             dayIterator = dayIterator.plusDays(1);
         }
+
     }
+
 }
