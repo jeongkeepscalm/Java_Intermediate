@@ -1,6 +1,6 @@
-package enumeration.ref2;
+package enumeration.refactoring2;
 
-public class EnumRefMain2 {
+public class EnumRefMain {
 
     public static void main(String[] args) {
 

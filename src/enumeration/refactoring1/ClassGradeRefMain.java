@@ -1,8 +1,8 @@
-package enumeration.ref1;
+package enumeration.refactoring1;
 
-import static enumeration.ref1.ClassGrade.*;
+import static enumeration.refactoring1.ClassGrade.*;
 
-public class ClassGradeRefMain1 {
+public class ClassGradeRefMain {
 
     public static void main(String[] args) {
 

@@ -1,4 +1,4 @@
-package enumeration.ref1;
+package enumeration.refactoring1;
 
 public class DiscountService {
 
