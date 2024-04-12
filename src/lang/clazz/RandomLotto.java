@@ -21,9 +21,7 @@ public class RandomLotto {
         Set<Integer> reSet = new HashSet<Integer>(Arrays.asList(lottoNumbers));
         System.out.println("로또번호 : " + reSet);
 
-
-        List<Integer> list = Arrays.stream(lottoNumbers).toList();
-        System.out.println("로또번호 : " + list);
+        System.out.println(Arrays.toString(lottoNumbers));
 
 
 
