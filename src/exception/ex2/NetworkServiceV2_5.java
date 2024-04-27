@@ -22,8 +22,6 @@ public class NetworkServiceV2_5 {
       client.disconnect();
     }
 
-
-
   }
 
 }
